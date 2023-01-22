@@ -2,19 +2,21 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="11.902471mm"
-   height="2.517391mm"
-   viewBox="0 0 11.90247 2.517391"
+   width="72.909203mm"
+   height="27.502775mm"
+   viewBox="0 0 72.9092 27.502776"
    version="1.1"
    id="svg5"
-   sodipodi:docname="flipper_lever.svg"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="flipperL.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs329" />
   <sodipodi:namedview
-     id="namedview7"
+     id="namedview327"
      pagecolor="#ffffff"
      bordercolor="#000000"
      borderopacity="0.25"
@@ -22,32 +24,30 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="px"
+     inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="2.7973568"
-     inkscape:cx="-68.636222"
-     inkscape:cy="63.274017"
+     inkscape:zoom="3.8901446"
+     inkscape:cx="149.4803"
+     inkscape:cy="104.3663"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="1912"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
-  <defs
-     id="defs2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-83.666023,-78.127324)">
+     transform="translate(-88.821793,-73.898259)">
     <path
-       id="rect5633"
-       style="fill:none;stroke:#747474;stroke-width:0.208474;stroke-dasharray:none;stroke-opacity:1"
-       d="m 93.945721,78.231598 v 0.002 H 83.77026 v 2.30688 h 10.175461 a 1.5182139,1.1545537 0 0 0 1.518536,-1.15442 1.5182139,1.1545537 0 0 0 -1.518536,-1.154497 z" />
+       id="path3229"
+       style="fill:none;stroke:#000000;stroke-width:0.395249;stroke-dasharray:none;stroke-opacity:1"
+       d="m 156.39639,93.705906 -54.07046,7.495244 M 156.3079,81.579413 102.22697,74.100301 m 0.3461,27.103109 a 13.553761,13.553761 0 0 1 -11.737908,-6.776884 13.553761,13.553761 0 0 1 -1e-5,-13.553763 13.553761,13.553761 0 0 1 11.737918,-6.776879 m 53.3568,7.438599 a 6.1385188,6.1385188 0 0 1 5.60327,6.061592 6.1385188,6.1385188 0 0 1 -5.49664,6.158462" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="mechanics"
-     transform="translate(-83.666023,-78.127324)" />
+     transform="translate(-88.821793,-73.898259)" />
 </svg>
