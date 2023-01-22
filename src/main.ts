@@ -9,7 +9,7 @@ async function loadSvg(
   url: string,
   x: number,
   y: number
-): Promise<Matter.Body[]> {
+): Promise<Matter.Body> {
   const response = await fetch(url);
   const text = await response.text();
   const document = new window.DOMParser().parseFromString(
@@ -24,7 +24,7 @@ async function loadSvg(
     var b = Matter.Bodies.fromVertices(
       x,
       y,
-      [Matter.Svg.pathToVertices(path, 1)],
+      [Matter.Svg.pathToVertices(path, 6)],
       {
         render: {
           fillStyle: "transparent",
@@ -35,7 +35,14 @@ async function loadSvg(
     );
     bodies.push(b);
   });
-  return bodies;
+  const finalBody = Matter.Body.create({
+    parts: bodies,
+    render: {
+      fillStyle: "transparent",
+      strokeStyle: "#FFFFFF",
+    },
+  });
+  return finalBody;
 }
 
 var paddleLDown = false;
@@ -70,8 +77,8 @@ async function buildLFlipper(x: number, y: number): Promise<Matter.Composite> {
 
   var pivotConstraint = Matter.Constraint.create({
     pointA: { x: x - 12, y: y },
-    bodyB: bodies[0],
-    pointB: { x: -12.8, y: 0.0 },
+    bodyB: bodies,
+    pointB: { x: -20, y: 0.0 },
     stiffness: 1,
     length: 0,
     render: {
@@ -81,7 +88,7 @@ async function buildLFlipper(x: number, y: number): Promise<Matter.Composite> {
   });
 
   var springConstraint = Matter.Constraint.create({
-    bodyA: bodies[0],
+    bodyA: bodies,
     pointA: { x: 22, y: 0 },
     bodyB: blockerBottom,
     pointB: { x: -0, y: 0 },
@@ -92,12 +99,10 @@ async function buildLFlipper(x: number, y: number): Promise<Matter.Composite> {
       strokeStyle: "green",
     },
   });
-  bodies.forEach((b) => {
-    b.collisionFilter.category = 0x1000;
-    b.collisionFilter.mask = 0x1111; // collides with anything
-  });
+  bodies.collisionFilter.category = 0x1001;
+  bodies.collisionFilter.mask = 0x1111; // collides with anything
   var flipper = Matter.Composite.create({
-    bodies: bodies,
+    bodies: [bodies],
     constraints: [pivotConstraint, springConstraint],
   });
 
@@ -105,9 +110,13 @@ async function buildLFlipper(x: number, y: number): Promise<Matter.Composite> {
     plugin: {
       attractors: [
         function (bodyA: Matter.Body, bodyB: Matter.Body) {
-          if (bodyA != bodies[0] && bodyB != bodies[0]) {
+          if (!paddleLDown) {
             return;
           }
+          if (bodyA != bodies && bodyB != bodies) {
+            return;
+          }
+
           var force = {
             x: (bodyA.position.x - bodyB.position.x) * 0.002,
             y: (bodyA.position.y - bodyB.position.y) * 0.002,
@@ -118,9 +127,7 @@ async function buildLFlipper(x: number, y: number): Promise<Matter.Composite> {
             bodyA.position,
             Matter.Vector.neg(force)
           );
-          if (paddleLDown) {
-            Matter.Body.applyForce(bodyB, bodyB.position, force);
-          }
+          Matter.Body.applyForce(bodyB, bodyB.position, force);
         },
       ],
     },
@@ -128,6 +135,10 @@ async function buildLFlipper(x: number, y: number): Promise<Matter.Composite> {
     render: {
       visible: true,
       fillStyle: "red",
+    },
+    collisionFilter: {
+      category: 0x0000, // special category just for flipper
+      mask: 0x0000,
     },
   });
   Matter.Composite.add(c, flipper);
@@ -156,23 +167,24 @@ async function buildRFlipper(x: number, y: number): Promise<Matter.Composite> {
       fillStyle: "blue",
     },
     collisionFilter: {
-      category: 0x010, // special category just for flipper
+      category: 0x0100, // special category just for flipper
       mask: 0x1010,
     },
   });
 
   // flipper constraints
 
-  bodies.forEach((b) => {
-    b.collisionFilter.category = 0x1000;
-    b.collisionFilter.mask = 0x1111; // collides with anything
-  });
+  bodies.collisionFilter.category = 0x1001;
+  bodies.collisionFilter.mask = 0x1111; // collides with anything
 
   var body = Matter.Bodies.circle(x - 30, y - 70, 35, {
     plugin: {
       attractors: [
         function (bodyA: Matter.Body, bodyB: Matter.Body) {
-          if (bodyA != bodies[0] && bodyB != bodies[0]) {
+          if (!paddleRDown) {
+            return;
+          }
+          if (bodyA != bodies && bodyB != bodies) {
             return;
           }
           var force = {
@@ -185,9 +197,7 @@ async function buildRFlipper(x: number, y: number): Promise<Matter.Composite> {
             bodyA.position,
             Matter.Vector.neg(force)
           );
-          if (paddleRDown) {
-            Matter.Body.applyForce(bodyB, bodyB.position, force);
-          }
+          Matter.Body.applyForce(bodyB, bodyB.position, force);
         },
       ],
     },
@@ -196,11 +206,15 @@ async function buildRFlipper(x: number, y: number): Promise<Matter.Composite> {
       visible: true,
       fillStyle: "red",
     },
+    collisionFilter: {
+      category: 0x0000, // does not collide
+      mask: 0x0000,
+    },
   });
   var pivotConstraint = Matter.Constraint.create({
     pointA: { x: x + 12, y: y },
-    bodyB: bodies[0],
-    pointB: { x: 12.8, y: 0.0 },
+    bodyB: bodies,
+    pointB: { x: 20, y: 0.0 },
     stiffness: 1,
     length: 0,
     render: {
@@ -210,7 +224,7 @@ async function buildRFlipper(x: number, y: number): Promise<Matter.Composite> {
   });
 
   var springConstraint = Matter.Constraint.create({
-    bodyA: bodies[0],
+    bodyA: bodies,
     pointA: { x: -22, y: 0 },
     bodyB: blockerBottom,
     pointB: { x: -0, y: 0 },
@@ -223,7 +237,7 @@ async function buildRFlipper(x: number, y: number): Promise<Matter.Composite> {
   });
 
   var flipper = Matter.Composite.create({
-    bodies: bodies,
+    bodies: [bodies],
     constraints: [pivotConstraint, springConstraint],
   });
   Matter.Composite.add(c, flipper);
@@ -235,32 +249,59 @@ async function buildRFlipper(x: number, y: number): Promise<Matter.Composite> {
 window.addEventListener("load", async () => {
   // module aliases
 
-  // create an engine without gravity
-  var engine = Matter.Engine.create({
-    gravity: {
-      x: 0,
-      y: 0,
-    },
-  });
+  var engine = Matter.Engine.create({});
+
+  // change frequency of engine
+  engine.timing.timeScale = 0.8;
 
   // create a renderer
+
   var render = Matter.Render.create({
     element: document.body,
     engine: engine,
     options: {
-      width: 800,
-      height: 600,
+      width: 640,
+      height: 480,
+      showCollisions: true,
+      showVelocity: true,
     },
   });
 
-  // load svg files
-
   // build flipper
-  const flipperL = await buildLFlipper(200, 200);
+  const flipperL = await buildLFlipper(320 - 60, 400);
   Matter.World.add(engine.world, flipperL);
-  const flipperR = await buildRFlipper(400, 200);
+  const flipperR = await buildRFlipper(320 + 60, 400);
   Matter.World.add(engine.world, flipperR);
 
+  // add walls
+  const wallOptions = {
+    isStatic: true,
+    render: {
+      fillStyle: "blue",
+    },
+  };
+  const walls = [
+    Matter.Bodies.rectangle(320, 0, 640, 15, wallOptions),
+    Matter.Bodies.rectangle(320, 480, 640, 15, wallOptions),
+    Matter.Bodies.rectangle(0, 240, 15, 480, wallOptions),
+    Matter.Bodies.rectangle(640, 240, 15, 480, wallOptions),
+  ];
+
+  Matter.World.add(engine.world, walls);
+
+  // add ball
+  function spawnBall() {
+    const ball = Matter.Bodies.circle(280, 40, 10, {
+      render: {
+        fillStyle: "red",
+      },
+      collisionFilter: {
+        category: 0x0001,
+        mask: 0x0001,
+      },
+    });
+    Matter.World.add(engine.world, ball);
+  }
   // run the renderer
   Matter.Render.run(render);
 
@@ -284,6 +325,9 @@ window.addEventListener("load", async () => {
   // on key up
 
   window.addEventListener("keyup", (e) => {
+    if (e.key === " ") {
+      spawnBall();
+    }
     if (e.key === "ArrowLeft") {
       paddleLDown = false;
     }
