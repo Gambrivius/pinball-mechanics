@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="2.7669535mm"
+   height="6.3507261mm"
+   viewBox="0 0 2.7669534 6.3507262"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="flipper_llink.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="2.7973568"
+     inkscape:cx="-75.070868"
+     inkscape:cy="47.902363"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-83.459979,-77.934457)">
+    <a
+       id="a6441"
+       transform="matrix(0.58438059,0,0,-0.58438059,53.758686,131.52263)">
+      <circle
+         style="fill:none;stroke:#747474;stroke-width:0.310999;stroke-dasharray:none;stroke-opacity:1"
+         id="path5710"
+         cx="53.19268"
+         cy="83.31739"
+         r="0.81545377" />
+    </a>
+    <rect
+       style="fill:none;stroke:#747474;stroke-width:0.181741;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect6438"
+       width="2.5852125"
+       height="6.1689854"
+       x="83.55085"
+       y="-84.194313"
+       ry="0.46656191"
+       transform="scale(1,-1)" />
+    <a
+       id="a6441-5"
+       transform="matrix(0.58438059,0,0,0.58438059,53.758686,30.697026)">
+      <circle
+         style="fill:none;stroke:#747474;stroke-width:0.310999;stroke-dasharray:none;stroke-opacity:1"
+         id="path5710-3"
+         cx="53.19268"
+         cy="83.31739"
+         r="0.81545377" />
+    </a>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="mechanics"
+     transform="translate(-83.459979,-77.934457)" />
+</svg>

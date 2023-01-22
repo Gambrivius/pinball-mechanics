@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="36.120491mm"
+   height="25.815489mm"
+   viewBox="0 0 36.12049 25.815489"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="flipper_assembly.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="0.98901497"
+     inkscape:cx="3.0333211"
+     inkscape:cy="50.555352"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-81.797559,-73.898258)">
+    <g
+       id="g5708"
+       transform="matrix(0.58438059,0,0,0.58438059,56.558058,30.697026)">
+      <circle
+         style="fill:none;stroke:#000000;stroke-width:0.269821;stroke-dasharray:none;stroke-opacity:1"
+         id="path3225"
+         cx="64.600922"
+         cy="83.317398"
+         r="1.2380096" />
+      <path
+         id="path3229"
+         style="fill:none;stroke:#000000;stroke-width:0.269917;stroke-dasharray:none;stroke-opacity:1"
+         d="M 101.35704,87.453236 64.432149,92.571763 M 101.29661,79.172018 64.364572,74.064512 m 0.23635,18.50879 a 9.2559042,9.2559042 0 0 1 -8.015848,-4.627952 9.2559042,9.2559042 0 0 1 -10e-7,-9.255904 9.2559042,9.2559042 0 0 1 8.015849,-4.627952 m 36.437508,5.079843 a 4.1920128,4.1920128 0 0 1 3.8265,4.139479 4.1920128,4.1920128 0 0 1 -3.75367,4.205631" />
+    </g>
+    <path
+       id="rect5633"
+       style="fill:none;stroke:#747474;stroke-width:0.208474;stroke-dasharray:none;stroke-opacity:1"
+       d="m 93.945721,78.231598 v 0.002 H 83.77026 v 2.30688 h 10.175461 a 1.5182139,1.1545537 0 0 0 1.518536,-1.15442 1.5182139,1.1545537 0 0 0 -1.518536,-1.154497 z" />
+    <a
+       id="a6441"
+       transform="matrix(0.58438059,0,0,-0.58438059,53.758686,131.52263)">
+      <circle
+         style="fill:none;stroke:#747474;stroke-width:0.310999;stroke-dasharray:none;stroke-opacity:1"
+         id="path5710"
+         cx="53.19268"
+         cy="83.31739"
+         r="0.81545377" />
+    </a>
+    <rect
+       style="fill:none;stroke:#747474;stroke-width:0.181741;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect6438"
+       width="2.5852125"
+       height="6.1689854"
+       x="83.55085"
+       y="-84.194313"
+       ry="0.46656191"
+       transform="scale(1,-1)" />
+    <a
+       id="a6441-5"
+       transform="matrix(0.58438059,0,0,0.58438059,53.758686,30.697026)">
+      <circle
+         style="fill:none;stroke:#747474;stroke-width:0.310999;stroke-dasharray:none;stroke-opacity:1"
+         id="path5710-3"
+         cx="53.19268"
+         cy="83.31739"
+         r="0.81545377" />
+    </a>
+    <path
+       style="fill:none;stroke:#747474;stroke-width:0.181743;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 84.097765,99.622876 V 91.224602 H 81.88843 v 8.398274 z"
+       id="path6622" />
+    <path
+       style="fill:none;stroke:#747474;stroke-width:0.181743;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="m 85.589209,91.224602 v 8.398274 h 2.209036 v -8.398274 z"
+       id="path6618" />
+    <rect
+       style="fill:none;stroke:#747474;stroke-width:0.170239;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect6526"
+       width="1.1396644"
+       height="11.177497"
+       x="84.273628"
+       y="81.83416" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="mechanics"
+     transform="translate(-81.797559,-73.898258)" />
+</svg>
